@@ -12,6 +12,7 @@ questions=["1.Who is the founder of Tech Career ?\n(a) Takele Mekonen \n(b) Ushe
             "10. Bonus Question!!!\nWhich country borders 14 nations and crosses 8 time zones? ?\n(a) israel \n(b) Germany \n(c) Russia \n(d) China \n\n Enter your answer :",
             ]
 
+
 questions_answers=[
     Quiz(questions[0],"b"),
     Quiz(questions[1],"b"),
