@@ -1,7 +1,7 @@
 
 ## פונקציה שבודקת אם התשובה נכונה ומחשבת את הניקוד
 
-def scoresSum(questions_answers):
+def triviaGame(questions_answers):
     score=0
     counter=0
     bonus = 0
@@ -34,16 +34,20 @@ def scoresSum(questions_answers):
             print("Total score : ", score)
             counter = 0
 
+    score = calcBonus(answer,bonus,i,score)
 
-#### שאלת בונוס (שאלה 10) יתווספו עוד 1000 נקודות ##
-        if answer == i.answer and bonus == 10:
-            score += 1000
+
     print("#################################")
     print("\nGame over ! \nyou got ",score,"score")
     print("Correct answers: " ,correctanswer,"/", len(questions_answers))
     print("\n################################")
 
 
+#### שאלת בונוס (שאלה 10) יתווספו עוד 1000 נקודות ##
+def calcBonus(answer,bonus,i,score):
+    if answer == i.answer and bonus == 10:
+        score += 1000
+    return score
 
 
 
