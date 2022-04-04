@@ -36,6 +36,11 @@ def scoresSum(questions_answers):
     for i in questions_answers:
         print("###########################")
         answer= input(i.question)
+        #  השאלה תחזור על עצמה כל עוד המשתמש לא בחר אחת מהאופציות!
+        while answer not in ("a", "b", "c", "d"):
+            print("To procced to the next question.. \nYou need to select an answer from the available options!!\navailable options are (a,b,c,d) :(")
+            answer = input(i.question)
+
         counter+=1
         bonus+=1
 
@@ -60,3 +65,6 @@ def scoresSum(questions_answers):
     print("Game over ! you got " ,score,"scores")
 
 scoresSum(questions_answers)
+
+##fix later the 1000 bonus points allways added to the score.
+
