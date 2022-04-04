@@ -33,6 +33,7 @@ def scoresSum(questions_answers):
     score=0
     counter=0
     bonus = 0
+    correctanswer = 0
     print("Welcome to Eli and Tsiona's trivia game :) ")
     for i in questions_answers:
         print("################################")
@@ -49,6 +50,7 @@ def scoresSum(questions_answers):
 
         if answer == i.answer:
             score+=200
+            correctanswer += 1
             print(" Correct answer ! :)")
         else:
             print("_______________________________")
@@ -65,8 +67,10 @@ def scoresSum(questions_answers):
         if answer == i.answer and bonus == 10:
             score += 1000
     print("################################")
-    print("Game over ! you got " ,score,"scores")
+    print("Game over ! you got ",score,"score")
+    print("you answered" ,correctanswer,"/10")
     print("################################")
+
 
 scoresSum(questions_answers)
 
