@@ -1,4 +1,4 @@
-from classQuiz import Quiz
+from quiz import Quiz
 
 questions=["1.Who is the founder of Tech Career ?\n(a) Takele Mekonen \n(b) Usher Elias \n(c) Israel Mangisto \n(d) Asaf Avraham \n\n Enter your answer :",
            "2.What is capital city of Israel ?\n(a) Tel aviv \n(b) Jerusalem \n(c) Lod \n(d) Rishon Lezion \n\n Enter your answer :",
@@ -12,8 +12,6 @@ questions=["1.Who is the founder of Tech Career ?\n(a) Takele Mekonen \n(b) Ushe
             "10. Bonus Question!!!\nWhich country borders 14 nations and crosses 8 time zones? ?\n(a) israel \n(b) Germany \n(c) Russia \n(d) China \n\n Enter your answer :",
             ]
 
-
-
 questions_answers=[
     Quiz(questions[0],"b"),
     Quiz(questions[1],"b"),
@@ -26,53 +24,3 @@ questions_answers=[
     Quiz(questions[8],"c"),
     Quiz(questions[9],"c")
 ]
-
-## פונקציה שבודקת אם התשובה נכונה ומחשבת את הניקוד
-
-def scoresSum(questions_answers):
-    score=0
-    counter=0
-    bonus = 0
-    correctanswer = 0
-    print("Welcome to Eli and Tsiona's trivia game :) ")
-    for i in questions_answers:
-        print("################################")
-        answer= input(i.question)
-        #  השאלה תחזור על עצמה כל עוד המשתמש לא בחר אחת מהאופציות!
-        while answer not in ("a", "b", "c", "d"):
-            print("------------------------------------")
-            print("To procced to the next question.. \nYou need to select an answer from the available options : (a,b,c,d) ")
-            print("------------------------------------")
-            answer = input(i.question)
-
-        counter+=1
-        bonus+=1
-
-        if answer == i.answer:
-            score+=200
-            correctanswer += 1
-            print(" Correct answer ! :)")
-        else:
-            print("_______________________________")
-            print(" Worng answer :( \n The correct answer is : ", i.answer)
-
-
-#### לאחר כל סבב (3 שאלות) יופיע כמה נקודות יש עד כה ##
-        if counter == 3:
-            print("Total score : ", score)
-            counter = 0
-
-
-#### שאלת בונוס (שאלה 10) יתווספו עוד 1000 נקודות ##
-        if answer == i.answer and bonus == 10:
-            score += 1000
-    print("#################################")
-    print("\nGame over ! you got ",score,"score")
-    print("Correct answers: " ,correctanswer,"/10")
-    print("\n################################")
-
-
-scoresSum(questions_answers)
-
-
-
