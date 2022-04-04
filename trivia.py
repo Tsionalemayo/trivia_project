@@ -66,13 +66,13 @@ def scoresSum(questions_answers):
 #### שאלת בונוס (שאלה 10) יתווספו עוד 1000 נקודות ##
         if answer == i.answer and bonus == 10:
             score += 1000
-    print("################################")
-    print("Game over ! you got ",score,"score")
-    print("you answered" ,correctanswer,"/10")
-    print("################################")
+    print("#################################")
+    print("\nGame over ! you got ",score,"score")
+    print("Correct answers: " ,correctanswer,"/10")
+    print("\n################################")
 
 
 scoresSum(questions_answers)
 
-##fix later the 1000 bonus points allways added to the score.
+
 
